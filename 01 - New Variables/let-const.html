@@ -6,18 +6,17 @@
 </head>
 <body>
 <script>
-  function setWidth(){
-    var width = 100;
-    console.log(width);
-  }
-  setWidth();
+  const key='abc123';
+  let points = 50;
+  let winner = false;
+  // key = 'abccdd';  //let-const.html:12 Uncaught TypeError: Assignment to constant variable.
 
-  var age = 100;
-  if (age > 12){
-    let dogYears = age * 7;
-    console.log(`you are ${dogYears} dog years old`);
+  const person = {
+    name:'Wes',
+    age:28
   }
 
+  Object.freeze(person);
 
 </script>
 </body>
