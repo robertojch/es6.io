@@ -19,12 +19,25 @@
     return str;
   }
 
+  function demo2(strings, ...values){
+    let str='';
+    strings.forEach((string,i) => {
+      str += `${string} <span style='color:red'>${values[i] || ''}</span>`;
+    });
+    return str;
+  }
+
   const name = 'Snickers';
   const age = 100;
 
   const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
   document.body.innerHTML = sentence;
   console.log(sentence);
+
+  const developer = 'Roberto';
+  const result = demo2`This is another demo ${developer} using tagged template literals`;
+  console.log(result);
+  document.body.innerHTML = result;
 
 </script>
 </body>
