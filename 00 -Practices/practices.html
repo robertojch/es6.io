@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let and const</title>
+</head>
+<body>
+<script>
+ 
+ const getSecret = function(secret){
+     const token = 'token recibido';
+     console.log(`getSecret function ejecutada1 ${secret}`);
+     return {
+         name:'Closure',
+         get:()=> {
+             console.log(`${secret} y ${token}`);
+         }
+     }
+ }
+
+ const obj1 = getSecret('Roberto Carlos');
+ const actual = obj1.get();
+
+ //call,apply, bind --------------------------------------------------------------------------------------------
+ var greetingNew = function(firstName,LastName){
+
+    console.log(this);
+    console.log(this.name);
+    console.log(`Welcome ${firstName} ${LastName}`);
+ }
+
+ greetingNew('Roberto','Carlos');
+ greetingNew.call(this,'Roberto','Carlos');
+ greetingNew.call({name:'call and apply'},'Roberto','Carlos');
+ greetingNew.apply(this,['Roberto','Carlos']);
+ greetingNew.apply({name:'call and apply'},['Roberto','Carlos']);
+ greetingNew.apply({},['Roberto','Carlos']);
+ greetingNew.call({name:'Spreading array'},...['Roberto','Carlos']);
+
+</script>
+</body>
+</html>
